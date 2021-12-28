@@ -1,0 +1,318 @@
+body {
+    background-color: #F5F4F5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+@media screen and (min-width: 721px) {
+
+    nav {
+        background-color: #37323E;
+        margin: 0 auto;
+        width: 100%;
+        font-family: 'Lato', sans-serif;
+        font-size: 1em;
+    }
+
+    nav input {
+        display: none;
+    }
+
+    nav a:link {
+        color: #F5F4F5;
+        text-decoration: none;
+    }
+
+    nav a:visited {
+        text-decoration: none;
+        color:#F5F4F5;
+    }
+
+    nav a:hover {
+        color: #DEB841;
+    }
+
+    .site-nav {
+        display: flex;
+        padding-left: 2em;
+        list-style-type: none;
+        color: rgb(57, 83, 112);
+    }
+
+    .site-nav > .align-right {
+        margin-left: auto;
+        padding-right: 2em;
+    }
+
+    .menu-item {
+        padding-right: 2em;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Playfair Display', serif; 
+    }
+
+    #headerImage {
+        align-self: center;
+    }
+
+    header img {
+        border-radius: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+        color: #37323E;
+        font-weight: bold;
+        margin-left: 3rem;
+        align-self: center;
+    }
+    
+    span.title {
+        font-weight: bolder;
+        font-size: 1.5em;
+        color: #37323E;
+    }
+
+    main {
+        display: block;
+        width: 94%;
+        margin: 0 auto;
+        font-family: 'Libre Franklin', sans-serif;
+        font-weight: lighter;
+        color: #37323E;
+    }
+    
+    main h2 {
+        font-family: 'Lato', sans-serif;
+        font-size: 2.25rem;
+        text-transform: uppercase;
+        color: #DEB841;
+        text-align: center;
+    }
+
+    #featuredImages {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #featuredImages img {
+        height: 200px;
+        width: 330px;
+        object-fit: cover;
+    }
+    
+    #featuredImages figcaption {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    nav {
+        background-color: #37323E;
+        height: 65px;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color:(rgb(57, 83, 112));
+        /* opacity:1; */
+        font-family: 'Lato', sans-serif;
+        font-size: 1.5em;
+        /* text-transform: uppercase; */
+        transition: 200ms;
+    }
+
+    #menu a:hover {
+        opacity:0.5;
+    }
+
+    #menu a:visited {
+        color: #f9f9f9;
+    }
+
+    #menu ul {
+        padding: 0;
+    }
+        
+    #menuToggle {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 25px;
+        left: 25px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    #menuToggle input {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+    
+    #menuToggle span {
+        display: flex;
+        width: 29px;
+        height: 2px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #F5F4F5;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+    
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+    
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+    
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-3px, -1px);
+        background:#F5F4F5;
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+    
+    #menu {
+        position: absolute;
+        width: 180px;
+        height: 400px;
+        box-shadow: 0 0 10px #85888C;
+        margin: -50px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background-color: rgb(221, 162, 60);
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+    
+    #menu li {
+        padding: 10px 0;
+        transition-delay: 2s;
+        list-style-type: none;
+    }
+    
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-items: center;
+        font-family: 'Playfair Display', serif;   
+    }
+
+    header h1 {
+        font-size: 2.5em;
+        color: #37323E;
+        font-weight: bold;
+        margin: 0 0 .5em 0;
+        text-align: center;
+    }
+
+    header img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: top center;
+    }
+    
+    span.title {
+        font-weight: bolder;
+        font-size: 1.5em;
+        color: #37323E;
+    }
+    
+    #featuredImages {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #featuredImages figure {
+        align-self: center;
+    }
+    
+    #featuredImages img {
+        height: 200px;
+        width: 330px;
+        object-fit: cover;
+    }
+    
+    #featuredImages figcaption {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    main {
+        display: block;
+        width: 94%;
+        margin: 0 auto;
+        font-family: 'Libre Franklin', sans-serif;
+        font-weight: lighter;
+        color: #37323E;
+    }
+    
+    main h2 {
+        font-family: 'Lato', sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #DEB841;
+        text-align: center;
+    }
+}
+
+footer {
+    background-color: #37323E;
+    font-family: 'Lato', sans-serif;
+    color: #F5F4F5;
+    text-align: center;
+    height: 3em;
+    padding-top: .2em;
+    margin: 0 auto;
+    width: 100%;
+}
